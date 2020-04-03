@@ -41,15 +41,19 @@ class FirstFragment : Fragment() {
                 "Puntuaste con ${rating} estrellas",
                 Toast.LENGTH_LONG).show()
         }
+
+        button.setOnClickListener{
+            mandarComentario()
+        }
     }
 
-    fun mandarComentario(view: View) {
+    fun mandarComentario() {
         if (!etComentario.text.isEmpty()) {
             val comentario = etComentario.text
             etComentario.text.clear()
-            Toast.makeText(view.context, "Su comentario ha sido enviado", Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, "Su comentario ha sido enviado", Toast.LENGTH_LONG).show()
         } else {
-            Toast.makeText(view.context, "Debe escribir un comentario primero!", Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, "Debe escribir un comentario primero!", Toast.LENGTH_LONG).show()
         }
     }
 }
